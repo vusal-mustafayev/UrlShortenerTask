@@ -1,0 +1,10 @@
+﻿global using MongoDB.Bson;
+global using MongoDB.Driver;
+global using UrlShortener.Data.Entities;
+global using UrlShortener.Data.Repositories;
+global using Microsoft.Extensions.Options;
+global using UrlShortener.Data.DbContexts;
+global using UrlShortener.Data.Entities.Base;
+global using Microsoft.Extensions.Configuration;
+global using MongoDB.Bson.Serialization.Attributes;
+global using Microsoft.Extensions.DependencyInjection;

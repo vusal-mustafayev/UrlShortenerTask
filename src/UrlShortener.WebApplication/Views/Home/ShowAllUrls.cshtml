@@ -1,0 +1,24 @@
+﻿@model List<UrlItemDto>
+@{
+    ViewData["Title"] = "All Urls";
+}
+
+<div class="table-responsive">
+    <table class="table table-striped table-hover">
+        <thead>
+            <tr>
+                <th scope="col">Original url</th>
+                <th scope="col">Short url</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var url in Model)
+            {
+                <tr>
+                    <td>@url.LongUrl</td>
+                    <td>@url.ShortenedUrl</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

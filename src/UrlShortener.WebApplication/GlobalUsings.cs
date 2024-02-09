@@ -1,0 +1,13 @@
+﻿global using MediatR;
+global using Serilog;
+global using UrlShortener.Data;
+global using UrlShortener.Domain;
+global using Ardalis.GuardClauses;
+global using Microsoft.AspNetCore.Diagnostics;
+global using System.Diagnostics;
+global using UrlShortener.WebApplication.Models;
+global using Microsoft.AspNetCore.Mvc;
+global using UrlShortener.Domain.URLs.DTOs;
+global using UrlShortener.Domain.URLs.Commands.CreateUrlItem;
+global using UrlShortener.Domain.URLs.Queries.GetUrlsWithPagination;
+global using UrlShortener.Domain.URLs.Queries.GetUrlByShortenedUrlQuery;

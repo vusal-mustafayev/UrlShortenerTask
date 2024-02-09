@@ -1,0 +1,14 @@
+﻿global using AutoMapper;
+global using FluentValidation.TestHelper;
+global using NSubstitute;
+global using Shouldly;
+global using System.Threading;
+global using System.Threading.Tasks;
+global using UrlShortener.Data.Entities;
+global using UrlShortener.Domain.Common.Interfaces;
+global using UrlShortener.Domain.URLs.Commands.CreateUrlItem;
+global using UrlShortener.Domain.URLs.DTOs;
+global using Xunit;
+global using Ardalis.GuardClauses;
+global using UrlShortener.Data.Repositories;
+global using UrlShortener.Domain.URLs.Queries.GetUrlByShortenedUrlQuery;

@@ -1,0 +1,46 @@
+﻿@model UrlVm
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<form asp-action="CreateUrl">
+    @Html.AntiForgeryToken()
+    <div class="row">
+        <div class="input-group input-group-lg">
+            <input asp-for="@Model.CreateUrlCommand!.LongUrl" class="form-control" placeholder="Paste the URL to be shortened..." />
+            <span class="input-group-btn">
+                <button class="btn btn-secondary custom" type="submit">Make Me Shorter!</button>
+            </span>
+        </div>
+    </div>
+    <span asp-validation-for="@Model.CreateUrlCommand!.LongUrl" class="text-danger"></span>
+</form>
+
+<br />
+
+<p>You can see below the details of this short URL.</p>
+
+<br />
+
+
+@if (Model?.ShortenedUrlDetails != null && Model?.ShortenedUrlDetails.ShortenedUrl != null)
+{
+    <ul>
+        <li>
+            <span class="col-md-2">
+                <strong>@Html.DisplayNameFor(model => model.ShortenedUrlDetails!.LongUrl):</strong>
+            </span>
+            <a href="@Model.ShortenedUrlDetails.LongUrl">@Model.ShortenedUrlDetails.LongUrl</a>
+        </li>
+        <li>
+            <span class="col-md-2">
+                <strong>@Html.DisplayNameFor(model => model.ShortenedUrlDetails!.ShortenedUrl):</strong>
+            </span>
+            <a target="_blank" rel="noreferrer" asp-action="RedirectToUrl" asp-route-shortAlias="@Model.ShortenedUrlDetails.ShortAlias">@Model.ShortenedUrlDetails.ShortenedUrl</a>
+        </li>
+    </ul>
+}
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
